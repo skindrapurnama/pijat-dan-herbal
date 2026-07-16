@@ -4,7 +4,7 @@ import {
   Plus, Minus, Trash2, Info, Phone, ShieldCheck, Check, 
   ChevronRight, AlertCircle, MapPin, Activity, X, Send, Award, ShoppingCart
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, MotionConfig } from "motion/react";
 import { products, therapies, therapists } from "./data";
 import { Product, Therapy, Therapist, CartItem, Booking, ChatMessage } from "./types";
 
@@ -339,6 +339,7 @@ export default function App() {
   });
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans flex flex-col selection:bg-emerald-100 selection:text-emerald-900">
       
       {/* Toast Notification */}
@@ -452,28 +453,28 @@ export default function App() {
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-emerald-150 py-3 px-4 z-40 shadow-2xl flex justify-around items-center">
         <button 
           onClick={() => setActiveTab("terapi")}
-          className={`flex flex-col items-center gap-1 transition-all ${activeTab === "terapi" ? "text-emerald-600 scale-105" : "text-slate-400"}`}
+          className={`flex flex-col items-center gap-1 transition-all ${activeTab === "terapi" ? "text-emerald-600 scale-105" : "text-slate-500"}`}
         >
           <Calendar className="w-5 h-5" />
           <span className="text-[10px] font-bold">Terapi</span>
         </button>
         <button 
           onClick={() => setActiveTab("toko")}
-          className={`flex flex-col items-center gap-1 transition-all ${activeTab === "toko" ? "text-emerald-600 scale-105" : "text-slate-400"}`}
+          className={`flex flex-col items-center gap-1 transition-all ${activeTab === "toko" ? "text-emerald-600 scale-105" : "text-slate-500"}`}
         >
           <Leaf className="w-5 h-5" />
           <span className="text-[10px] font-bold">Herbal</span>
         </button>
         <button 
           onClick={() => setActiveTab("konsultasi")}
-          className={`flex flex-col items-center gap-1 transition-all ${activeTab === "konsultasi" ? "text-emerald-600 font-bold scale-105" : "text-slate-400"}`}
+          className={`flex flex-col items-center gap-1 transition-all ${activeTab === "konsultasi" ? "text-emerald-600 font-bold scale-105" : "text-slate-500"}`}
         >
           <Sparkles className="w-5 h-5 text-emerald-500" />
           <span className="text-[10px] font-bold">Tanya AI</span>
         </button>
         <button 
           onClick={() => setActiveTab("pesanan")}
-          className={`flex flex-col items-center gap-1 relative transition-all ${activeTab === "pesanan" ? "text-emerald-600 scale-105" : "text-slate-400"}`}
+          className={`flex flex-col items-center gap-1 relative transition-all ${activeTab === "pesanan" ? "text-emerald-600 scale-105" : "text-slate-500"}`}
         >
           <User className="w-5 h-5" />
           <span className="text-[10px] font-bold">Sesi & Order</span>
@@ -652,9 +653,10 @@ export default function App() {
                   />
                   <Leaf className="w-4 h-4 text-emerald-600 absolute left-4 top-4" />
                   {searchQuery && (
-                    <button 
-                      onClick={() => setSearchQuery("")} 
+                    <button
+                      onClick={() => setSearchQuery("")}
                       className="absolute right-4 top-3.5 text-slate-400 hover:text-emerald-700 transition-colors"
+                      aria-label="Hapus pencarian"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -1431,9 +1433,10 @@ export default function App() {
                   <ShoppingBag className="w-5 h-5 text-emerald-400" />
                   <h3 className="font-bold text-sm tracking-tight">Keranjang Belanja</h3>
                 </div>
-                <button 
+                <button
                   onClick={() => setIsCartOpen(false)}
-                  className="p-1.5 rounded-full hover:bg-emerald-900 text-emerald-200 transition-all"
+                  className="p-2 rounded-full hover:bg-emerald-900 text-emerald-200 transition-all"
+                  aria-label="Tutup keranjang"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -1640,5 +1643,6 @@ export default function App() {
       </AnimatePresence>
 
     </div>
+    </MotionConfig>
   );
 }

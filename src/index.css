@@ -5,3 +5,43 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
+
+/* --- Accessibility & interaction polish (non-visual for default users) --- */
+
+/* Visible focus ring for keyboard navigation only (does not affect mouse/touch). */
+:focus-visible {
+  outline: 2px solid #059669; /* emerald-600 */
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Remove the legacy focus outline for pointer users while keeping :focus-visible. */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Snappier taps: remove the 300ms delay and the grey tap flash on mobile. */
+button,
+a,
+[role="button"],
+input,
+select,
+textarea,
+label {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Respect the user's OS "Reduce Motion" setting: neutralises CSS animations
+   (animate-pulse/ping/bounce) and transitions. Framer Motion is handled
+   separately via <MotionConfig reducedMotion="user"> in App.tsx. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

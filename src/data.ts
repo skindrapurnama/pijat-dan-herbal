@@ -111,7 +111,7 @@ export const therapies: Therapy[] = [
     name: "Bekam Basah Medis (Steril & Higienis)",
     description: "Terapi bekam basah (wet cupping) profesional yang memadukan kaidah sunnah dengan standar medis modern steril. Menggunakan alat kop bebas BPA, jarum pemantik sekali pakai (disposable needle), serta disinfeksi antiseptik standar rumah sakit guna mengeluarkan darah kotor statis dari bawah kulit.",
     duration: 60,
-    price: 120000,
+    price: 200000,
     image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&q=80&w=600",
     benefits: [
       "Mengeluarkan endapan racun/toksin dan kolesterol dari darah",
@@ -133,7 +133,7 @@ export const therapies: Therapy[] = [
     name: "Gurah Pernapasan & Suara Tradisional",
     description: "Terapi gurah hidung tradisional menggunakan tetesan ekstrak herbal alami tanaman Srigunggu (Clerodendrum serratum). Berguna merangsang selaput lendir untuk mengeluarkan tumpukan dahak kotor, lendir berlebih, nikotin, serta bakteri jahat dari saluran sinus, paru-paru, dan tenggorokan secara alami.",
     duration: 45,
-    price: 150000,
+    price: 200000,
     image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=600",
     benefits: [
       "Membersihkan endapan lendir/sinus penyumbat napas",
@@ -156,7 +156,7 @@ export const therapies: Therapy[] = [
     name: "Pijat Kebubaran & Totok Acupressure",
     description: "Kombinasi pijat urut tradisional nusantara dengan stimulasi acupressure pada titik-titik meridian tubuh. Menggunakan kombinasi teknik usapan (effleurage), tekanan jempol (petrissage), dan totok wajah untuk memulihkan aliran energi tubuh yang tersumbat akibat kelelahan fisik maupun pikiran.",
     duration: 75,
-    price: 100000,
+    price: 200000,
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=600",
     benefits: [
       "Mengatasi sindrom kelelahan ekstrem dan kaku otot",
